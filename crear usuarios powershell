@@ -1,0 +1,2 @@
+https://sid-500.com/2018/07/23/powershell-how-to-create-active-directory-bulk-users/
+1..10 | Foreach-Object {New-ADUser -Name Student$_ -AccountPassword (ConvertTo-SecureString "Pa$$w000rd" -AsPlainText -Force) -UserPrincipalName Student$_@$env:userdnsdomain -ChangePasswordAtLogon 1 -Enabled 1 -Verbose}
